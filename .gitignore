@@ -14,3 +14,12 @@ gen/
 
 # Local configuration file (sdk path, etc)
 local.properties
+
+# Eclipse stuff
+.classpath
+.project
+.settings
+
+# Gradle stuff
+.gradle
+build/
