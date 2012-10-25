@@ -1,0 +1,30 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.android.tools.build:gradle:0.2'
+	}
+}
+
+apply plugin: 'android'
+
+
+android {
+	target='android-16'
+	defaultConfig {
+		packageName='de.goddchen.android.gradle.buildconfigs'
+		signingStoreLocation='keystore'
+		signingStorePassword='helloworld'
+		signingKeyAlias='Android Release Key'
+		signingKeyPassword='helloworld'
+	}
+	buildTypes {
+		release {
+			buildConfig "public final static boolean IS_LIVE=true;"
+		}
+		debug {
+			buildConfig "public final static boolean IS_LIVE=false;"
+		}
+	}
+}
