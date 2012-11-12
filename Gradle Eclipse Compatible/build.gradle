@@ -28,6 +28,9 @@ android {
 			resources {
 				srcDir 'src'
 			}
+			aidl {
+				srcDir 'src'
+			}
 		}
 	}
 }
