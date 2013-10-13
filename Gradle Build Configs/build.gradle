@@ -3,7 +3,7 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'com.android.tools.build:gradle:0.2'
+		classpath 'com.android.tools.build:gradle:0.6.+'
 	}
 }
 
@@ -11,16 +11,21 @@ apply plugin: 'android'
 
 
 android {
-	target='android-16'
-	defaultConfig {
-		packageName='de.goddchen.android.gradle.buildconfigs'
-		signingStoreLocation='keystore'
-		signingStorePassword='helloworld'
-		signingKeyAlias='Android Release Key'
-		signingKeyPassword='helloworld'
+	compileSdkVersion 18
+	buildToolsVersion "18.0.1"
+	
+	signingConfigs {
+		release {
+			storeFile file('keystore')
+			storePassword 'helloworld'
+			keyAlias 'Android Release Key'
+			keyPassword 'helloworld'
+		}
 	}
+	
 	buildTypes {
 		release {
+			signingConfig signingConfigs.release
 			buildConfig "public final static boolean IS_LIVE=true;"
 		}
 		debug {
