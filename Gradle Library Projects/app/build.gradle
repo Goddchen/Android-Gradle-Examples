@@ -3,17 +3,20 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'com.android.tools.build:gradle:0.2'
+		classpath 'com.android.tools.build:gradle:0.6.+'
 	}
 }
 
 apply plugin: 'android'
 
 android {
-	target='android-16'
+	compileSdkVersion 18
+	buildToolsVersion "18.0.1"
+	
 	dependencies {
 		compile project(":library")
 	}
+	
 	sourceSets {
 		main {
 			manifest {
