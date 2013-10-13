@@ -21,5 +21,7 @@ local.properties
 .settings
 
 # Gradle stuff
-.gradle
+.gradle/
 build/
+.idea/
+out/
